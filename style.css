@@ -1,0 +1,42 @@
+/* hurdatle stylesheet v0.1 */
+/* by las-r on github */
+
+body {
+    margin: 50px;
+    background: #000;
+    color: #fff;
+}
+
+h1, h2 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 100;
+}
+h2 {
+    text-align: left;
+    font-size: 30px;
+}
+
+p.title {
+    text-align: center;
+    font-size: 20px;
+}
+p.footer {
+    text-align: center;
+}
+p.attr {
+    font-size: 12px;
+    color: #999;
+}
+
+img {
+    width: 50%;
+    border: #fff 2px solid;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
