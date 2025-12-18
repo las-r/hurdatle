@@ -10,26 +10,30 @@
     <body>
         <!-- title -->
         <h1>Hurdatle</h1>
-        <p class="title">A simple Atlantic (and maybe Eastern Pacific sometime soon?) hurricane season guessing game.</p>
+        <p class="title">A simple Atlantic and Eastern Pacific hurricane season guessing game.</p>
         <hr>
 
         <!-- game -->
         <div class="game">
+            <!-- season diagram -->
             <img id="seasonImg" alt="Hurricane season diagram" oncontextmenu="return false;">
             <p class="attr">(C) Wikimedia Commons (CC BY-SA)</p>
-            <br>
 
+            <!-- year input -->
             <input type="number" id="guess" placeholder="Year">
-            <button onclick="submitGuess()">Guess</button>
-            <button onclick="window.location.reload()">New</button>
+            <div class="inl_cont">
+                <button onclick="submitGuess()">Guess</button>
+                <button onclick="window.location.reload()">New</button>
+            </div>
 
-            <div class="status" id="status"></div>
+            <!-- stati -->
             <div class="status" id="remaining"></div>
+            <div class="status" id="status"></div>
         </div>
 
         <!-- footer -->
         <hr>
-        <p class="footer">By <a href="https://github.com/las-r">las_r</a> | v0.1 | <a href="changelog.html">Changelog</a></p>
+        <p class="footer">By <a href="https://github.com/las-r">las_r</a> | v0.2 | <a href="changelog.html">Changelog</a></p>
 
         <!-- script -->
         <script src="script.js"></script>
