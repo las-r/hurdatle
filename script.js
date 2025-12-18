@@ -1,4 +1,4 @@
-// hurdatle script v0.2
+// hurdatle script v0.2.1
 // by las-r on github
 
 // constants
@@ -60,6 +60,7 @@ function loadSeason() {
 // init
 loadSeason();
 document.getElementById("remaining").textContent = `Guesses left: ${guessesLeft}`;
+document.getElementById("guess").focus()
 
 // guess handler
 function submitGuess() {
@@ -103,4 +104,9 @@ document.onkeypress = function(e) {
     if (e.key == "Enter") {
         submitGuess();
     }
+    else if (e.key == "r") {
+        window.location.reload();
+    }
 }
+
+
