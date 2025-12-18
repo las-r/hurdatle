@@ -1,11 +1,11 @@
-// hurdatle script v0.2.1
+// hurdatle script v0.2.2
 // by las-r on github
 
 // constants
 const MIN_YEAR_ATL = 1851;
 const MIN_YEAR_PAC = 1949;
 const MAX_YEAR = new Date().getFullYear();
-const DATABASES = ["atl", "pac"]
+const DATABASES = ["Atlantic", "Pacific"]
 
 // game state
 let database = DATABASES[Math.floor(Math.random() * DATABASES.length)]
@@ -22,40 +22,40 @@ function endGame() {
     document.getElementById("remaining").textContent = "";
 }
 function randomYear(DAT) {
-    if (DAT == "atl") {
+    if (DAT == "Atlantic") {
         return Math.floor(Math.random() * (MAX_YEAR - MIN_YEAR_ATL + 1)) + MIN_YEAR_ATL;
     }
-    else if (DAT == "pac") {
+    else if (DAT == "Pacific") {
         return Math.floor(Math.random() * (MAX_YEAR - MIN_YEAR_PAC + 1)) + MIN_YEAR_PAC;
     }
 }
 function loadSeason() {
     const year = randomYear(database);
     const img = document.getElementById("seasonImg");
-    let url1;
-    let url2;
 
-    if (database == "atl") {
-        url1 = `https://commons.wikimedia.org/wiki/Special:FilePath/${year}_Atlantic_hurricane_season_summary_map.png`;
-        url2 = `https://commons.wikimedia.org/wiki/Special:FilePath/${year}_Atlantic_hurricane_season_summary.png`;
-    }
-    if (database == "pac") {
-        url1 = `https://commons.wikimedia.org/wiki/Special:FilePath/${year}_Pacific_hurricane_season_summary_map.png`;
-        url2 = `https://commons.wikimedia.org/wiki/Special:FilePath/${year}_Pacific_hurricane_season_summary.png`;
-    }
+    const urls = [
+        `https://commons.wikimedia.org/wiki/Special:FilePath/${year}_${database}_hurricane_season_summary_map.png`,
+        `https://commons.wikimedia.org/wiki/Special:FilePath/${year}_${database}_hurricane_season_summary.png`,
+        `https://commons.wikimedia.org/wiki/Special:FilePath/${year}_${database}_hurricane_season_summary_map.jpg`,
+        `https://commons.wikimedia.org/wiki/Special:FilePath/${year}_${database}_hurricane_season_summary.jpg`
+    ];
 
     season.year = year;
 
+    let i = 0;
     img.onerror = () => {
-        if (img.src.includes("_map")) {
-            img.src = url2;
-        } else {
+        i++;
+        if (index < urls.length) {
+            img.src = urls[index];
+        } 
+        else {
             loadSeason();
         }
     };
 
-    img.src = url1;
+    img.src = urls[0];
 }
+
 
 // init
 loadSeason();
@@ -108,5 +108,3 @@ document.onkeypress = function(e) {
         window.location.reload();
     }
 }
-
-
