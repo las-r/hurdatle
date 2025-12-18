@@ -1,4 +1,4 @@
-/* hurdatle stylesheet v0.1 */
+/* hurdatle stylesheet v0.2 */
 /* by las-r on github */
 
 body {
@@ -23,6 +23,7 @@ p.title {
 }
 p.footer {
     text-align: center;
+    margin-bottom: 10px;
 }
 p.attr {
     font-size: 12px;
@@ -30,8 +31,15 @@ p.attr {
 }
 
 img {
-    width: 50%;
+    width: 100%;
+    max-width: 700px;
+    min-width: 300px;
+    height: auto;
     border: #fff 2px solid;
+}
+
+input {
+    margin-bottom: 10px;
 }
 
 .game {
@@ -39,4 +47,10 @@ img {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+.inl_cont {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;;
 }
