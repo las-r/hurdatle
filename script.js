@@ -1,4 +1,4 @@
-// hurdatle script v0.2.2
+// hurdatle script v0.2.3
 // by las-r on github
 
 // constants
@@ -45,8 +45,8 @@ function loadSeason() {
     let i = 0;
     img.onerror = () => {
         i++;
-        if (index < urls.length) {
-            img.src = urls[index];
+        if (i < urls.length) {
+            img.src = urls[i];
         } 
         else {
             loadSeason();
@@ -108,3 +108,4 @@ document.onkeypress = function(e) {
         window.location.reload();
     }
 }
+
